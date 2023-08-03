@@ -20,13 +20,16 @@ body {
   font-weight: 400;
   margin: 0;
   background-color: var(--Violet);
-}
-
-.container {
   background-image: url(Assets/bg-mobile.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 4rem;
 }
 
 h1,
@@ -38,13 +41,14 @@ h3 {
 h1 {
   font-size: 2.4rem;
   font-family: 600;
+  margin-bottom: 1.6rem;
 }
 
 p {
   font-size: 1.6rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
   .container {
     background-image: url(Assets/bg-desktop.svg);
   }
@@ -54,6 +58,7 @@ p {
   }
 
   h1 {
+    margin-bottom: 2.4rem;
     font-size: 4rem;
   }
 }
@@ -67,12 +72,18 @@ p {
   color: #fff;
   padding: 10px;
   transition: all 0.3s;
+  outline: none;
   cursor: pointer;
 }
 
-.icon:hover {
+.icon:hover,
+.icon:focus {
   color: var(--Soft-Magenta);
   border: 1px solid var(--Soft-Magenta);
+}
+
+.logo {
+  width: 11rem;
 }
 
 /* btn */
@@ -80,16 +91,82 @@ p {
 .btn {
   padding: 1.3rem 7.3rem;
   border: 0;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
   font-size: 1.2rem;
-  margin: 4rem;
+  outline: none;
   border-radius: 30px;
   background: #fff;
   color: var(--Violet);
+  margin-top: 2.4rem;
+  transition: all 0.3s;
 }
 
-@media screen and (min-width: 768px) {
+.btn:hover,
+.btn:focus {
+  background: var(--Soft-Magenta);
+  color: #fff;
+}
+
+@media screen and (min-width: 1000px) {
   .btn {
     padding: 2rem 6rem;
     font-size: 1.8rem;
+  }
+
+  .logo {
+    width: 20rem;
+  }
+}
+
+/* Grid */
+
+.grid {
+  display: grid;
+  justify-items: center;
+  gap: 6rem;
+  margin-top: 6.4rem;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  min-width: 396px;
+  max-width: 696px;
+}
+
+.content {
+  text-align: center;
+}
+
+.footer-icons {
+  width: auto;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 6rem 0 4rem;
+}
+
+.footer .icon-twitter {
+  margin: 0 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    margin-top: 7.5rem;
+  }
+
+  .content {
+    text-align: left;
+  }
+
+  .footer {
+    /* text-align: end; */
+    justify-content: end;
+    margin-top: 2.2rem;
   }
 }
